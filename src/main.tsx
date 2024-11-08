@@ -2,30 +2,48 @@ import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
+import { CodeEditor } from './editor.ts';
+import { createRoot } from 'react-dom/client'
+
 import * as monaco from 'monaco-editor';
+import App from './app.tsx';
+import { StrictMode } from 'react';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-  <div id="container" height=50 width=50 style="background-color: orange; height:500px; width:500px;"></div>
-`
+// document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+//   <div>
+//     <a href="https://vitejs.dev" target="_blank">
+//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
+//     </a>
+//     <a href="https://www.typescriptlang.org/" target="_blank">
+//       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
+//     </a>
+//     <h1>Vite + TypeScript</h1>
+//     <div class="card">
+//       <button id="counter" type="button"></button>
+//     </div>
+//     <p class="read-the-docs">
+//       Click on the Vite and TypeScript logos to learn more
+//     </p>
+//   </div>
+//   <div class="editors-container">
+//     <div id="container" class="monaco-container"></div>
+//     <div id="container2" class="monaco-container"></div>
+//     <div id="container3" class="monaco-container"></div>
+//     <div id="container4" class="monaco-container"></div>
+//   </div>
+// `
 
+const rootElement = document.getElementById('react-root')!;
+const root = createRoot(rootElement);
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
 
+// customElements.define('code-editor', CodeEditor);
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 
 const container = document.getElementById("container");
 // document.getElementsByTagName('div')
@@ -34,6 +52,8 @@ const container = document.getElementById("container");
 //   return;
 // }
 
+console.log(container)
+
 let actionsExist = true;
 
 if (container) {
@@ -41,8 +61,8 @@ if (container) {
   console.log("found container");
 
   const value = /* set from `myEditor.getModel()`: */ `function hello() {
-    alert('Hello world!');
-  }`;
+alert('Hello world!');
+}`;
 
   const myEditor = monaco.editor.create(container, {
     value,
@@ -83,7 +103,7 @@ if (container) {
       const codeActionList: monaco.languages.CodeActionList = {
         actions: actionsExist ? [action] : [],
         dispose: function (): void {
-          throw new Error('Function not implemented.');
+          // throw new Error('Function not implemented.');
         }
       };
 

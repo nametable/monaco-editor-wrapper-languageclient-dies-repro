@@ -94,3 +94,26 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+.editors-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.monaco-container {
+  /* flex: 1 1 calc(50% - 10px);
+  /* Adjusts the width of each item */
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: orange;
+  border-style: dashed;
+  border-color: red;
+
+  height: 500px;
+  width: 500px;
+  display: grid;
+  height: 400px;
+  width: 400px;
+  flex: 1;
+  position: relative !important;
+}
