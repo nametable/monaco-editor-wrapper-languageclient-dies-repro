@@ -29,7 +29,7 @@ connection.onCodeAction((params) => {
     const range = params.range;
 
     const action: CodeAction = {
-        title: `Example quick fix`,
+        title: `Example quick fix ${counter}`,
         diagnostics: undefined,
         kind: "quickfix",
         edit: {
@@ -40,9 +40,9 @@ connection.onCodeAction((params) => {
         }
     };
 
-    if (counter > 5) {
-        return [];
-    }
+    // if (counter > 5) {
+    //     return [];
+    // }
 
     if (action && action.edit && action.edit.changes) {
 
@@ -72,6 +72,10 @@ connection.onInitialize(params => {
 // connection.onInitialized(params => {
 //     services.lsp.LanguageServer.initialized(params);
 // });
+
+connection.onShutdown(() => {
+    console.info("Shutdown request received!");
+})
 
 connection.listen();
 

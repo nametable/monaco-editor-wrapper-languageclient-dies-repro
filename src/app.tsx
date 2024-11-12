@@ -10,6 +10,8 @@ function App() {
 
         monaco.languages.register({ id: languageId, aliases: [languageId.toUpperCase()] })
 
+        // the problem does not seem to be with the connection or code action registration (both Language server and client side code actions fail when the most recent monaco-editor-wrapper is disposed...)
+
         // https://stackoverflow.com/questions/57994101/show-quick-fix-for-an-error-in-monaco-editor
         monaco.languages.registerCodeActionProvider(languageId, {
             provideCodeActions: function (model: monaco.editor.ITextModel, range: monaco.Range, context: monaco.languages.CodeActionContext, token: monaco.CancellationToken): monaco.languages.ProviderResult<monaco.languages.CodeActionList> {

@@ -79,6 +79,7 @@ function Editor({ initialFileUri }: { initialFileUri: string }) {
 
                     console.log("Language Client State:", wrapper.current!.getLanguageClient()?.state);
                     // console.log("Language client:", wrapper.current?.getLanguageClient().);
+                    console.log("Wrapper:", wrapper.current);
                 }}>test</button>
                 <button onClick={async () => {
                     if (wrapper.current) {
@@ -90,7 +91,7 @@ function Editor({ initialFileUri }: { initialFileUri: string }) {
 
 
                     const code: CodePlusUri = {
-                        text: defaultText.get(fileUri)!,
+                        text: defaultText.get(fileUri) ?? 'console.log("some default text....");',
                         uri: fileUri,
                         // fileExt: 'langium',
                         enforceLanguageId: languageId
@@ -153,11 +154,12 @@ function Editor({ initialFileUri }: { initialFileUri: string }) {
 
                 }}>load</button>
                 <button onClick={async () => {
-                    wrapper.current!.getWorker()?.terminate();
-                    wrapper.current!.dispose()
+                    await wrapper.current!.dispose(true) // somewhere in here the other wrapper gets broken....?
+                    // wrapper.current!.getWorker()?.terminate();
                     wrapper.current = undefined;
-                    editor.current?.dispose();
-                    editor.current = undefined;
+                    // editor.current?.dispose(); // not the problem
+                    // editor.current = undefined;
+                    console.log("Killed monaco editor with uri:", fileUri)
                 }}>kill</button>
             </div>
             <div ref={editorRoot} className="monaco-container"></div>
