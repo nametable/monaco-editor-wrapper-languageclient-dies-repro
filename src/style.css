@@ -112,8 +112,6 @@ button:focus-visible {
   height: 500px;
   width: 500px;
   display: grid;
-  height: 400px;
-  width: 400px;
   flex: 1;
   position: relative !important;
 }

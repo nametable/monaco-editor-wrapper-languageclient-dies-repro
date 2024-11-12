@@ -163,6 +163,223 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
+"@codingame/monaco-vscode-base-service-override@8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-base-service-override/-/monaco-vscode-base-service-override-8.0.4.tgz#39f82eba61f53c71dae76660dcccafe78b97687e"
+  integrity sha512-tTIA68KRYgSPHyanjqTUGQro+t67vShxAGNjM2Iz7dhqMOYZhYA4oIwI4Q0A+QWBC2HKOCNkwFoc5pqconw5YA==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-configuration-service-override@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-configuration-service-override/-/monaco-vscode-configuration-service-override-8.0.4.tgz#23c91a22a7c126e343be1ee4e1575a92b93acc3f"
+  integrity sha512-Fx8wRY3G2s3fpcQWGBMEe7fUmDhPFSkn+b/DwPCTiyo9IX+uKk8w097XjJBwCk0wVHgOcYs4GKPsip5IqJkydw==
+  dependencies:
+    "@codingame/monaco-vscode-files-service-override" "8.0.4"
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-editor-service-override@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-editor-service-override/-/monaco-vscode-editor-service-override-8.0.4.tgz#795c1ec4d25bf997c3e195117b0350db6a8034b0"
+  integrity sha512-is77poIqjYAcve9AYlUrkMfgtjWlH1D9ebxGjk4Y2UHvmQvsrRFuaGvzEt4YpgNLd+0hSyuH+R0HWSOq3uN2BA==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-environment-service-override@8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-environment-service-override/-/monaco-vscode-environment-service-override-8.0.4.tgz#64a506acc68c253cc0d12a8e051a8064e7badc44"
+  integrity sha512-3PBqEag0RaACIYiPdtDqxn4BS48yMq1uNCrNYm9E2P1On7JaCLNPHrQfE9Et6HbJT9qPzdcfbD5IwevQbCym5Q==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-extensions-service-override@8.0.4", "@codingame/monaco-vscode-extensions-service-override@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-extensions-service-override/-/monaco-vscode-extensions-service-override-8.0.4.tgz#0f5e4009f58d2c24f8a25c908207757770c24c92"
+  integrity sha512-uEOpSXGxC6W3uaKwj5p+WXsvkVqD1ONDNOCy8ZEHskpkN6KO/0XE927OvpF75JsqXHjNTmstSxTjU9/GykpruA==
+  dependencies:
+    "@codingame/monaco-vscode-files-service-override" "8.0.4"
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-files-service-override@8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-files-service-override/-/monaco-vscode-files-service-override-8.0.4.tgz#68b975a647a142988f6e817f6fb0f4769c056218"
+  integrity sha512-DCvbxgE6wwOoUsKGlinOB7vYx7HoVUviqWY913Fux4K7/wYWpBcNVtK8kmKs7euPJPeAsl06PJFaXaS3Qjfkqg==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-host-service-override@8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-host-service-override/-/monaco-vscode-host-service-override-8.0.4.tgz#8a437601c9a6fd5b7b927fa275f131a30f363377"
+  integrity sha512-VT8jFmnzMpi6DuSgA8c/F0MVh+fApLH75ledgMqfsKC1vSDOkV0IaPPBHRfPYDPvXCrnOtfdpvP0hFrdg1ytig==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-cs@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-cs/-/monaco-vscode-language-pack-cs-8.0.4.tgz#b4d9e4e696164cf66a6ae394478749c042aa16d2"
+  integrity sha512-ijeMCVxDhNv2M1h92pMCYx8P4nBUTWlAisnAnrDASNJa3V6bFjCo+r0jXKruOjZhjtO0VOYsX0r1s0VUq1Otuw==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-de@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-de/-/monaco-vscode-language-pack-de-8.0.4.tgz#8ed9f6072a320505f226953c0a2d2c9830aba55b"
+  integrity sha512-OehZUq8+z8KDnZPBH0xEU+Ph+D9GTssFPcMzdvxLSfY0xyxNDfC+rCemLGAfJydtONVKde5WsOWvozM5PJ+uEQ==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-es@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-es/-/monaco-vscode-language-pack-es-8.0.4.tgz#70f05c59991a787d24d145218d9110e93fbc054e"
+  integrity sha512-+mB2aeWnn+Nz4s8zopaEQWqhZLvsUM/SGcsqpjy/liU0D6M8qhc8XyAbOS3dORTFtFVIhxj/MVW7I8E2fhJd1Q==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-fr@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-fr/-/monaco-vscode-language-pack-fr-8.0.4.tgz#7f692d6aa5846187fa5a9dd6ff8f6eb30260b81f"
+  integrity sha512-nhWM+uOVSzcnIGYr9GCEX00GJjgUt9xoW+TKLG1axayCpPboDoD8mbafaycNoYkz3aJIwhYytpKIzhl05EmIhg==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-it@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-it/-/monaco-vscode-language-pack-it-8.0.4.tgz#8cbcc30e7705596c702510b3920ab4276ad383f2"
+  integrity sha512-BXXLAakXU8zumxQH9uRX4KIIPy/ZJjdI/7DWriASs0BU2rJwta9cRmGZshpl9IJMVB4HHLmUvEoXv3NXfGIu8A==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-ja@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-ja/-/monaco-vscode-language-pack-ja-8.0.4.tgz#986a5e3bf5a113966dd3fd6d74eaffa78deb8826"
+  integrity sha512-G4Dv75fCZuRNL6lo0/T71iGVvRaIP039PV4icOZv2sIxatQEIPcnI89Bc4obHRmX8IzKIPKG4OYNixDzRno8dA==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-ko@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-ko/-/monaco-vscode-language-pack-ko-8.0.4.tgz#f8de1b26cd80d6300080711ca61e0a1c4f361abf"
+  integrity sha512-+RSYTNci7V8EdaAzHKn5OGo9GH3LE9v1B4/MHo2d1iNvvsB3jJ3p4I69E7w0+g3cr7B+gFGfJYAvDHdQABd5Gg==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-pl@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-pl/-/monaco-vscode-language-pack-pl-8.0.4.tgz#cbfd7543736dbef8374b5e55300fe7afa99c9d07"
+  integrity sha512-YlFJEqUQ2j1bSiVBz1o59RZDsFaPVfhbnosMWV4B1iqW0qEXtQwUfdMeU0N8H3fq2v2ov6W79dOu9PlWyOW4Ww==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-pt-br@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-pt-br/-/monaco-vscode-language-pack-pt-br-8.0.4.tgz#59c6e2d06e1704166594961d6aa3f86a1f8e5975"
+  integrity sha512-kwoVrjIYZhmRwajt3qrYRr6KW0UVxC/YV/c+MOjr2HKMUgy5fqo+BKmj/9lSfduyu5JPddZxKARTBw0oByVghA==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-qps-ploc@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-qps-ploc/-/monaco-vscode-language-pack-qps-ploc-8.0.4.tgz#22931f2ce084175f849198b1a72dc1c2afd6612b"
+  integrity sha512-TJK9YuCHf2RHK3NcoiIAgjyna1lv6ndN70t13wf9pN+GyOE7XfYUVJj0YrQDbNCXiSeaTxgJtt0VQZmeN6RHjQ==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-ru@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-ru/-/monaco-vscode-language-pack-ru-8.0.4.tgz#fc32f0dfcc42440047ea50712f939c0b78694b67"
+  integrity sha512-4rZDZU9VNJCIDM8hwLJQYhUnsQu3qcVONpb1muRFGKYhh9NwAELAwl2XW+ybsTC/B/4Qysk7cB1IxrTt4AhNjg==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-tr@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-tr/-/monaco-vscode-language-pack-tr-8.0.4.tgz#ca8e0c0d5c30ebab9600a695c6476b51492bbf79"
+  integrity sha512-cqtF5drmuFp/wKmJvm9l6Unc+AF4vn48t0KJBZ1/QRxTZnRlwT5Dm+z0JR880O8WsSUkzJIG93/wBAzpv+6/Bg==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-zh-hans@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-zh-hans/-/monaco-vscode-language-pack-zh-hans-8.0.4.tgz#481c7cb1acd834a3abe4f99ded719a782e166ae2"
+  integrity sha512-a8R+IUggCI/UVv4uDy7XzjOwB3WAt+KX8ElsAqzJB9Y5BbFW5/a1Pxca0UXJ2vQabcls4TcrIi2yR30jnlBgww==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-language-pack-zh-hant@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-language-pack-zh-hant/-/monaco-vscode-language-pack-zh-hant-8.0.4.tgz#f85ac2458320359aeb7368395f28c4323ab462a0"
+  integrity sha512-g3b/apaTc/bg5isOEvxir38bbYzd/CuBY0MWtXw1NKXc0GPsTo4j5eAuT2R4qT1pJ9XgbMBbYQAMLX3DxSJRxA==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-languages-service-override@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-languages-service-override/-/monaco-vscode-languages-service-override-8.0.4.tgz#048676288e236d65c595f7a441f0894e312f0193"
+  integrity sha512-GXd2fKQa96tNv0gFB3nT/yWUc+4pZM/2L8KcfOOuNRWEOjm9TbOWmNZyWGi2Abf4vAdLNKVtJBX1+SoDkwoQdw==
+  dependencies:
+    "@codingame/monaco-vscode-files-service-override" "8.0.4"
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-layout-service-override@8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-layout-service-override/-/monaco-vscode-layout-service-override-8.0.4.tgz#efc3995f9c1b02bb6ef444d1619deef96bd70120"
+  integrity sha512-DrF1vRJG8vPOaqC06fu99yjvtIcuTza5vAQdH19FfDi87vyk3BeFsnj7H7Z0fRK/wQigBcNzXYbUkuE93I95IQ==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-localization-service-override@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-localization-service-override/-/monaco-vscode-localization-service-override-8.0.4.tgz#92d03dc905bcd5ce3ee0a1a63d8a6e9363d9a531"
+  integrity sha512-z/MGZXSW69y3pIxbXobRfoGadN82BSSO7tu3jkhJx3c3CpvULaDl5HLUKoXDwtG14/nEA/VCzI/MOHp/bXBKDQ==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-model-service-override@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-model-service-override/-/monaco-vscode-model-service-override-8.0.4.tgz#8bd8ac982034dcb1a4955554f4f44f6cd50027de"
+  integrity sha512-oynV9SnSE1MfqtVjqDWy/xcmekmAVNzyoqTh6oH3B+Oy/nhPqI6X9yIA0I47u0ncs/wjj3dDVnXOEv2IqJXxZg==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-monarch-service-override@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-monarch-service-override/-/monaco-vscode-monarch-service-override-8.0.4.tgz#89e59c6d708263e2a7547d34fded01739fa30246"
+  integrity sha512-OrlE+ffvGf9C6xfkcO6rEiuy4GJQJQ+dSByxHyfLXA9qCWn/dHpYfjpr83YIlBG0tNoBdAYnx2iLgAo6y5Tzkw==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-quickaccess-service-override@8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-quickaccess-service-override/-/monaco-vscode-quickaccess-service-override-8.0.4.tgz#0ddc743516a1aeda7e0e4e510932b9e1e9afa975"
+  integrity sha512-VXHVKRqtieKf+BTTUwcT++tJEb/k7PI2vLR3Lgsh2t0We7ydPOPLTDA99/Ls3yuM+i6IvKqBXc+WomN8MRS1rw==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-textmate-service-override@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-textmate-service-override/-/monaco-vscode-textmate-service-override-8.0.4.tgz#bebdf011ff6916d189028b12caba4511508c9f09"
+  integrity sha512-YDJoXCqnEimotWcqUlzU8bBah3+dqLAcIULJEV07K2DMFkKty78sc6w2CAItIlzmTeJApW2HpTdOgZehYqro3w==
+  dependencies:
+    "@codingame/monaco-vscode-files-service-override" "8.0.4"
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+    vscode-oniguruma "1.7.0"
+    vscode-textmate "9.0.0"
+
+"@codingame/monaco-vscode-theme-defaults-default-extension@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-theme-defaults-default-extension/-/monaco-vscode-theme-defaults-default-extension-8.0.4.tgz#4cf3362ae296b11aa0b4b67631b61265ce27a43e"
+  integrity sha512-y2M0i2ZUGdQbbZ5/rfGQzDe0McUWOVDu0HrIBKhGCyVMfeR7nII06jipQD0e/XPY1cmphyi/x1U70AX2msJEQQ==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+"@codingame/monaco-vscode-theme-service-override@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-theme-service-override/-/monaco-vscode-theme-service-override-8.0.4.tgz#e05e9ca5dd3a6c7a2d4b1392eb82168067aa6adc"
+  integrity sha512-z2UpL7KQJ/gg1LUP9ya65Qph30bypwiQT+mq9ZM699nQEPpXJ9HGA5AiHE2rf2wlKnbkmis1gdpIXeYQsDLy0g==
+  dependencies:
+    "@codingame/monaco-vscode-files-service-override" "8.0.4"
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
 "@esbuild/aix-ppc64@0.21.5":
   version "0.21.5"
   resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@esbuild/aix-ppc64/-/aix-ppc64-0.21.5.tgz#c7184a326533fcdf1b8ee0733e21c713b975575f"
@@ -459,6 +676,23 @@
     "@types/babel__core" "^7.20.5"
     react-refresh "^0.14.2"
 
+"@vscode/iconv-lite-umd@0.7.0":
+  version "0.7.0"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@vscode/iconv-lite-umd/-/iconv-lite-umd-0.7.0.tgz#d2f1e0664ee6036408f9743fee264ea0699b0e48"
+  integrity sha512-bRRFxLfg5dtAyl5XyiVWz/ZBPahpOpPrNYnnHpOpUZvam4tKH35wdhP4Kj6PbM0+KdliOsPzbGWpkxcdpNB/sg==
+
+balanced-match@^1.0.0:
+  version "1.0.2"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
+  integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
+
+brace-expansion@^2.0.1:
+  version "2.0.1"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/brace-expansion/-/brace-expansion-2.0.1.tgz#1edc459e0f0c548486ecf9fc99f2221364b9a0ae"
+  integrity sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==
+  dependencies:
+    balanced-match "^1.0.0"
+
 browserslist@^4.24.0:
   version "4.24.2"
   resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/browserslist/-/browserslist-4.24.2.tgz#f5845bc91069dbd55ee89faf9822e1d885d16580"
@@ -550,6 +784,11 @@ globals@^11.1.0:
   resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
+jschardet@3.1.3:
+  version "3.1.3"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/jschardet/-/jschardet-3.1.3.tgz#10c2289fdae91a0aa9de8bba9c59055fd78898d3"
+  integrity sha512-Q1PKVMK/uu+yjdlobgWIYkUOCR1SqUmW9m/eUJNNj4zI2N12i25v8fYpVf+zCakQeaTdBdhnZTFbVIAVZIVVOg==
+
 jsesc@^3.0.2:
   version "3.0.2"
   resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/jsesc/-/jsesc-3.0.2.tgz#bb8b09a6597ba426425f2e4a07245c3d00b9343e"
@@ -574,10 +813,63 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-monaco-editor@0.52.0:
-  version "0.52.0"
-  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/monaco-editor/-/monaco-editor-0.52.0.tgz#d47c02b191eae208d68878d679b3ee7456031be7"
-  integrity sha512-OeWhNpABLCeTqubfqLMXGsqf6OmPU6pHM85kF3dhy6kq5hnhuVS1p3VrEW/XhWHc71P2tHyS5JFySD8mgs1crw==
+minimatch@^5.1.0:
+  version "5.1.6"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/minimatch/-/minimatch-5.1.6.tgz#1cfcb8cf5522ea69952cd2af95ae09477f122a96"
+  integrity sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==
+  dependencies:
+    brace-expansion "^2.0.1"
+
+monaco-editor-wrapper@^5.5.3:
+  version "5.5.3"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/monaco-editor-wrapper/-/monaco-editor-wrapper-5.5.3.tgz#32030c4af292e086f318bae58033369c0721a0eb"
+  integrity sha512-ceC+HnpUw/WehfH9uL7Y5j1m/46hQFcS/Z1VYpiFl+pieNf4/JfOWrzLEDqnxOK/qrPJ2fR6JB78mfZNLtPeQQ==
+  dependencies:
+    "@codingame/monaco-vscode-configuration-service-override" "~8.0.4"
+    "@codingame/monaco-vscode-editor-service-override" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-cs" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-de" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-es" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-fr" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-it" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-ja" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-ko" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-pl" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-pt-br" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-qps-ploc" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-ru" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-tr" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-zh-hans" "~8.0.4"
+    "@codingame/monaco-vscode-language-pack-zh-hant" "~8.0.4"
+    "@codingame/monaco-vscode-monarch-service-override" "~8.0.4"
+    "@codingame/monaco-vscode-textmate-service-override" "~8.0.4"
+    "@codingame/monaco-vscode-theme-defaults-default-extension" "~8.0.4"
+    "@codingame/monaco-vscode-theme-service-override" "~8.0.4"
+    monaco-editor "npm:@codingame/monaco-vscode-editor-api@~8.0.4"
+    vscode "npm:@codingame/monaco-vscode-api@~8.0.4"
+    vscode-languageclient "~9.0.1"
+    vscode-languageserver-protocol "~3.17.5"
+    vscode-ws-jsonrpc "~3.3.2"
+
+"monaco-editor@npm:@codingame/monaco-vscode-editor-api@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-editor-api/-/monaco-vscode-editor-api-8.0.4.tgz#c0de7feca594f23159fd3ddd67fad9fda5f94fbb"
+  integrity sha512-rKUdFRsnzTV1dj6FL/MD+cBIUAGv9aJNz8bTx4BA5sDK3lDWuifhdCBvk4WZEj6glfXe3sEfGXKy1Vp5btDOJQ==
+  dependencies:
+    vscode "npm:@codingame/monaco-vscode-api@8.0.4"
+
+monaco-languageclient@^8.8.3:
+  version "8.8.3"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/monaco-languageclient/-/monaco-languageclient-8.8.3.tgz#c42651c5f99fb6405e235e75d9df5f277d06a034"
+  integrity sha512-F/ETX2EuUgFnwxNXCrlPOplrINTPMzNvMJBKdl6ZzHnCucnaoJQt9nmqWZmNG4DU2cyaUwTMrcNODOgqQ+So4w==
+  dependencies:
+    "@codingame/monaco-vscode-extensions-service-override" "~8.0.4"
+    "@codingame/monaco-vscode-languages-service-override" "~8.0.4"
+    "@codingame/monaco-vscode-localization-service-override" "~8.0.4"
+    "@codingame/monaco-vscode-model-service-override" "~8.0.4"
+    monaco-editor "npm:@codingame/monaco-vscode-editor-api@~8.0.4"
+    vscode "npm:@codingame/monaco-vscode-api@~8.0.4"
+    vscode-languageclient "~9.0.1"
 
 ms@^2.1.3:
   version "2.1.3"
@@ -665,6 +957,11 @@ semver@^6.3.1:
   resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/semver/-/semver-6.3.1.tgz#556d2ef8689146e46dcea4bfdd095f3434dffcb4"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
 
+semver@^7.3.7:
+  version "7.6.3"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/semver/-/semver-7.6.3.tgz#980f7b5550bc175fb4dc09403085627f9eb33143"
+  integrity sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==
+
 source-map-js@^1.2.1:
   version "1.2.1"
   resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
@@ -693,6 +990,77 @@ vite@^5.4.8:
     rollup "^4.20.0"
   optionalDependencies:
     fsevents "~2.3.3"
+
+vscode-jsonrpc@8.2.0:
+  version "8.2.0"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/vscode-jsonrpc/-/vscode-jsonrpc-8.2.0.tgz#f43dfa35fb51e763d17cd94dcca0c9458f35abf9"
+  integrity sha512-C+r0eKJUIfiDIfwJhria30+TYWPtuHJXHtI7J0YlOmKAo7ogxP20T0zxB7HZQIFhIyvoBPwWskjxrvAtfjyZfA==
+
+vscode-jsonrpc@~8.2.1:
+  version "8.2.1"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/vscode-jsonrpc/-/vscode-jsonrpc-8.2.1.tgz#a322cc0f1d97f794ffd9c4cd2a898a0bde097f34"
+  integrity sha512-kdjOSJ2lLIn7r1rtrMbbNCHjyMPfRnowdKjBQ+mGq6NAW5QY2bEZC/khaC5OR8svbbjvLEaIXkOq45e2X9BIbQ==
+
+vscode-languageclient@~9.0.1:
+  version "9.0.1"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/vscode-languageclient/-/vscode-languageclient-9.0.1.tgz#cdfe20267726c8d4db839dc1e9d1816e1296e854"
+  integrity sha512-JZiimVdvimEuHh5olxhxkht09m3JzUGwggb5eRUkzzJhZ2KjCN0nh55VfiED9oez9DyF8/fz1g1iBV3h+0Z2EA==
+  dependencies:
+    minimatch "^5.1.0"
+    semver "^7.3.7"
+    vscode-languageserver-protocol "3.17.5"
+
+vscode-languageserver-protocol@3.17.5, vscode-languageserver-protocol@~3.17.5:
+  version "3.17.5"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/vscode-languageserver-protocol/-/vscode-languageserver-protocol-3.17.5.tgz#864a8b8f390835572f4e13bd9f8313d0e3ac4bea"
+  integrity sha512-mb1bvRJN8SVznADSGWM9u/b07H7Ecg0I3OgXDuLdn307rl/J3A9YD6/eYOssqhecL27hK1IPZAsaqh00i/Jljg==
+  dependencies:
+    vscode-jsonrpc "8.2.0"
+    vscode-languageserver-types "3.17.5"
+
+vscode-languageserver-types@3.17.5:
+  version "3.17.5"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/vscode-languageserver-types/-/vscode-languageserver-types-3.17.5.tgz#3273676f0cf2eab40b3f44d085acbb7f08a39d8a"
+  integrity sha512-Ld1VelNuX9pdF39h2Hgaeb5hEZM2Z3jUrrMgWQAu82jMtZp7p3vJT3BzToKtZI7NgQssZje5o0zryOrhQvzQAg==
+
+vscode-languageserver@^9.0.1:
+  version "9.0.1"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/vscode-languageserver/-/vscode-languageserver-9.0.1.tgz#500aef82097eb94df90d008678b0b6b5f474015b"
+  integrity sha512-woByF3PDpkHFUreUa7Hos7+pUWdeWMXRd26+ZX2A8cFx6v/JPTtd4/uN0/jB6XQHYaOlHbio03NTHCqrgG5n7g==
+  dependencies:
+    vscode-languageserver-protocol "3.17.5"
+
+vscode-oniguruma@1.7.0:
+  version "1.7.0"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/vscode-oniguruma/-/vscode-oniguruma-1.7.0.tgz#439bfad8fe71abd7798338d1cd3dc53a8beea94b"
+  integrity sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==
+
+vscode-textmate@9.0.0:
+  version "9.0.0"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/vscode-textmate/-/vscode-textmate-9.0.0.tgz#313c6c8792b0507aef35aeb81b6b370b37c44d6c"
+  integrity sha512-Cl65diFGxz7gpwbav10HqiY/eVYTO1sjQpmRmV991Bj7wAoOAjGQ97PpQcXorDE2Uc4hnGWLY17xme+5t6MlSg==
+
+vscode-ws-jsonrpc@~3.3.2:
+  version "3.3.2"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/vscode-ws-jsonrpc/-/vscode-ws-jsonrpc-3.3.2.tgz#380e5c5819c493a151236dd20a668eee173fdc5e"
+  integrity sha512-jxGHxAuow67sNRkkS2svsW00ZACX+Zrbury9Au2A22px6sg4pe858Nnnwvtg0Pm4D0L/W9Yzn7N7X3R/RIMxsQ==
+  dependencies:
+    vscode-jsonrpc "~8.2.1"
+
+"vscode@npm:@codingame/monaco-vscode-api@8.0.4", "vscode@npm:@codingame/monaco-vscode-api@~8.0.4":
+  version "8.0.4"
+  resolved "https://artifactory.metro.ad.selinc.com:443/artifactory/api/npm/sel-npm/@codingame/monaco-vscode-api/-/monaco-vscode-api-8.0.4.tgz#e1db8e8bf096eb1bd2ec0d4ec9d50aa4e5d52d29"
+  integrity sha512-qZ+HwIijDvzwwWscMA73y9ARu5zUaENOdzi0jQftJP9j2k96cRghsaCV25OgnmpZ/1BemjB4HhHCcr71Gq+GPQ==
+  dependencies:
+    "@codingame/monaco-vscode-base-service-override" "8.0.4"
+    "@codingame/monaco-vscode-environment-service-override" "8.0.4"
+    "@codingame/monaco-vscode-extensions-service-override" "8.0.4"
+    "@codingame/monaco-vscode-files-service-override" "8.0.4"
+    "@codingame/monaco-vscode-host-service-override" "8.0.4"
+    "@codingame/monaco-vscode-layout-service-override" "8.0.4"
+    "@codingame/monaco-vscode-quickaccess-service-override" "8.0.4"
+    "@vscode/iconv-lite-umd" "0.7.0"
+    jschardet "3.1.3"
 
 yallist@^3.0.2:
   version "3.1.1"

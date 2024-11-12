@@ -1,119 +1,164 @@
 import * as monaco from 'monaco-editor';
+import { CodePlusUri, EditorAppConfigClassic, LanguageClientConfig, MonacoEditorLanguageClientWrapper, WorkerConfigDirect, WorkerConfigOptions } from 'monaco-editor-wrapper';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-function Editor() {
+const defaultText: Map<string, string> = new Map<string, string>([
+    ['test.json', `{
+    "hey": "how are you",
+    "state": false,
+    "a_number": 234
+}
+    `],
+    ['test.js', `function hello() {
+    alert('Hello world!');
+}
+`]
+])
 
-    const [isEditorReady, setIsEditorReady] = useState(false);
-    const [isMonacoMounting, setIsMonacoMounting] = useState(true);
+function Editor({ initialFileUri }: { initialFileUri: string }) {
+    const wrapper = useRef<MonacoEditorLanguageClientWrapper | undefined>(undefined);
 
-    // useMount(() => {
-    //     // const cancelable = loader.init();
-
-    //     // cancelable
-    //     //     .then((monaco) => (monacoRef.current = monaco) && setIsMonacoMounting(false))
-    //     //     .catch(
-    //     //         (error) =>
-    //     //             error?.type !== 'cancelation' && console.error('Monaco initialization: error:', error),
-    //     //     );
-
-    //     // return () => (editorRef.current ? disposeEditor() : cancelable.cancel());
-
-    //     // setIsMonacoMounting(false);
-
-    //     // return (() => { })
-    // });
-
-    useEffect(() => {
-        setIsMonacoMounting(false);
-    }, [])
+    const [fileUri, setFileUri] = useState(initialFileUri)
+    const [languageId, setLanguageId] = useState("javascript")
 
     const editorRoot = useRef<HTMLDivElement>(null);
-    const editor = useRef<monaco.editor.IStandaloneCodeEditor>(null);
+    const editor = useRef<monaco.editor.IStandaloneCodeEditor | undefined>(undefined);
 
-    const createEditor = useCallback(() => {
-        if (!editorRoot.current) {
+    const createEditor = useCallback(async () => {
+        if (!editorRoot.current || !wrapper.current) {
             return;
         }
 
-        const actionsExist = true;
 
-        const value = `function hello() {
-    alert('Hello world!');
-}`;
 
-        const myEditor = monaco.editor.create(editorRoot.current, {
-            value,
-            language: "javascript",
-            automaticLayout: true,
-        });
+        // wrapper.current.getLanguageClient().
 
-        myEditor.addAction({
-            id: 'yo',
-            label: 'something',
-            run: function (editor: monaco.editor.ICodeEditor, ...args: any[]): void | Promise<void> {
-                return
-            }
-        });
+        // const myEditor = monaco.editor.create(editorRoot.current, {
+        //     value,
+        //     language: "javascript",
+        //     automaticLayout: true,
+        // });
 
-        // https://stackoverflow.com/questions/57994101/show-quick-fix-for-an-error-in-monaco-editor
-        monaco.languages.registerCodeActionProvider("javascript", {
-            provideCodeActions: function (model: monaco.editor.ITextModel, range: monaco.Range, context: monaco.languages.CodeActionContext, token: monaco.CancellationToken): monaco.languages.ProviderResult<monaco.languages.CodeActionList> {
+        // myEditor.addAction({
+        //     id: 'yo',
+        //     label: 'something',
+        //     run: function (editor: monaco.editor.ICodeEditor, ...args: any[]): void | Promise<void> {
+        //         return
+        //     }
+        // });
 
-                const action: monaco.languages.CodeAction = {
-                    title: `Example quick fix`,
-                    diagnostics: undefined,
-                    kind: "quickfix",
-                    edit: {
-                        edits: [
-                            {
-                                resource: model.uri,
-                                textEdit: {
-                                    range: range,
-                                    text: "This text replaces the text with the error",
-                                },
-                                versionId: undefined,
-                            }
-                        ]
-                    }
-                };
 
-                const codeActionList: monaco.languages.CodeActionList = {
-                    actions: actionsExist ? [action] : [],
-                    dispose: function (): void {
-                        // throw new Error('Function not implemented.');
-                    }
-                };
-
-                return codeActionList;
-            }
-        });
 
         // setTimeout(() => {
         //     actionsExist = false;
         // }, 5000);
 
-        editor.current = myEditor;
+        editor.current = wrapper.current.getEditor(); //myEditor;
 
-        setIsEditorReady(true);
+        // setIsEditorReady(true);
     }, []);
 
-    useEffect(() => {
-        !isMonacoMounting && !isEditorReady && createEditor();
-    }, [isMonacoMounting, isEditorReady, createEditor]);
+    // useEffect(() => {
+    //     !isMonacoMounting && !isEditorReady && createEditor();
+    // }, [isMonacoMounting, isEditorReady, createEditor]);
 
     return (
         <div>
-            <div className="buttons-container">
+            <div className="toolbar">
+                <input value={languageId} onChange={e => setLanguageId(e.target.value)} style={{ "width": 80 }}></input>
+                <input value={fileUri} onChange={e => setFileUri(e.target.value)} style={{ "width": 80 }}></input>
                 <button onClick={() => {
-                    console.log("test2");
+                    const editor = wrapper.current!.getEditor()!;
+
                     // editorRoot.current!.focus();
-                    editor.current!.focus();
-                    editor.current!.setPosition({
-                        lineNumber: 2,
+                    editor.focus();
+                    editor.setPosition({
+                        lineNumber: 1,
                         column: 8
                     })
+
+                    console.log("Language Client State:", wrapper.current!.getLanguageClient()?.state);
+                    // console.log("Language client:", wrapper.current?.getLanguageClient().);
                 }}>test</button>
-                <button>test</button>
+                <button onClick={async () => {
+                    if (wrapper.current) {
+                        return;
+                    }
+                    wrapper.current = new MonacoEditorLanguageClientWrapper();
+
+                    const actionsExist = true;
+
+
+                    const code: CodePlusUri = {
+                        text: defaultText.get(fileUri)!,
+                        uri: fileUri,
+                        // fileExt: 'langium',
+                        enforceLanguageId: languageId
+                    }
+
+                    const editorAppConfigClassic: EditorAppConfigClassic = {
+                        $type: 'classic',
+                        codeResources: {
+                            main: code,
+                        },
+                        editorOptions: {
+                            glyphMargin: false,
+                            // cursorStyle: 'block-outline'
+                        },
+                        languageDef: {
+                            languageExtensionConfig: {
+                                id: languageId,
+                                extensions: [".js"],
+                                aliases: ["Javascript", "javascript"]
+                            }
+                        },
+                    };
+
+                    // const worker = new Worker(new URL('./worker.ts', import.meta.url), {
+                    //     type: 'module',
+                    //     name: "Logan's LSP worker"
+                    // })
+
+                    // const workerConfigDirect: WorkerConfigDirect = {
+                    //     $type: 'WorkerDirect',
+                    //     worker: worker
+                    // }
+
+                    const workerConfigOptions: WorkerConfigOptions = {
+                        $type: 'WorkerConfig',
+                        type: 'module',
+                        url: new URL('./worker.ts', import.meta.url),
+                        workerName: "Logan LSP Worker",
+                    }
+
+                    const languageClientConfig: LanguageClientConfig = {
+                        languageId: languageId,
+                        options: workerConfigOptions, // workerConfigDirect
+                        clientOptions: {
+                            documentSelector: [languageId],
+                        }
+                    }
+
+                    await wrapper.current.init({
+                        id: languageId,
+                        wrapperConfig: {
+                            serviceConfig: undefined,
+                            editorAppConfig: editorAppConfigClassic
+                        },
+                        languageClientConfig: languageClientConfig
+                    });
+
+                    await wrapper.current.start(editorRoot.current);
+                    console.log("Language Client State:", wrapper.current.getLanguageClient()?.state);
+
+                }}>load</button>
+                <button onClick={async () => {
+                    wrapper.current!.getWorker()?.terminate();
+                    wrapper.current!.dispose()
+                    wrapper.current = undefined;
+                    editor.current?.dispose();
+                    editor.current = undefined;
+                }}>kill</button>
             </div>
             <div ref={editorRoot} className="monaco-container"></div>
         </div>
@@ -122,118 +167,3 @@ function Editor() {
 }
 
 export default Editor;
-
-
-function useMount(arg0: () => void) {
-    throw new Error('Function not implemented.');
-}
-/*
-export class CodeEditor extends LitElement {
-    public monacoroot: HTMLElement;
-
-    constructor() {
-        super();
-
-        this.monacoroot = document.createElement("div");
-        this.monacoroot.classList.add("monaco-container");
-        this.monacoroot.id = "container"
-    }
-
-    static get styles() {
-        return [css`
-            .monaco-container {
-                display: grid;
-                height: 100%;
-                width: 400px;
-                flex: 1;
-                position: relative !important;
-                height:500px;
-                width:500px;
-            }
-        `];
-    }
-
-    render() {
-        return html`
-            <!-- <button @click="${() => { console.log("clicked!"); this.initMonaco(); }}">Start</button> -->
-            <!-- <div id="container" class="monaco-container" style="background-color: orange; "></div> -->
-        `;
-    }
-
-    updated() {
-        this.initMonaco()
-    }
-
-    private initMonaco() {
-        // const container = this.renderRoot.querySelector("#container"); //document.getElementById("container");
-        const container = this.monacoroot;
-
-        console.log(container)
-
-        let actionsExist = true;
-
-        if (container) {
-
-            console.log("found container");
-
-            const value = `function hello() {
-    alert('Hello world!');
-  }`;
-
-            const myEditor = monaco.editor.create(container, {
-                value,
-                language: "javascript",
-                automaticLayout: true,
-            });
-
-            myEditor.addAction({
-                id: 'yo',
-                label: 'something',
-                run: function (editor: monaco.editor.ICodeEditor, ...args: any[]): void | Promise<void> {
-                    return
-                }
-            });
-
-            // https://stackoverflow.com/questions/57994101/show-quick-fix-for-an-error-in-monaco-editor
-            monaco.languages.registerCodeActionProvider("javascript", {
-                provideCodeActions: function (model: monaco.editor.ITextModel, range: monaco.Range, context: monaco.languages.CodeActionContext, token: monaco.CancellationToken): monaco.languages.ProviderResult<monaco.languages.CodeActionList> {
-
-                    const action: monaco.languages.CodeAction = {
-                        title: `Example quick fix`,
-                        diagnostics: undefined,
-                        kind: "quickfix",
-                        edit: {
-                            edits: [
-                                {
-                                    resource: model.uri,
-                                    textEdit: {
-                                        range: range,
-                                        text: "This text replaces the text with the error",
-                                    },
-                                    versionId: undefined,
-                                }
-                            ]
-                        }
-                    };
-
-                    const codeActionList: monaco.languages.CodeActionList = {
-                        actions: actionsExist ? [action] : [],
-                        dispose: function (): void {
-                            // throw new Error('Function not implemented.');
-                        }
-                    };
-
-                    return codeActionList;
-                }
-            });
-
-            // setTimeout(() => {
-            //     actionsExist = false;
-            // }, 5000);
-
-        }
-
-    }
-}
-
-*/

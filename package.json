@@ -16,8 +16,10 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
-    "monaco-editor": "0.52.0",
+    "monaco-editor-wrapper": "^5.5.3",
+    "monaco-languageclient": "^8.8.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "vscode-languageserver": "^9.0.1"
   }
 }
