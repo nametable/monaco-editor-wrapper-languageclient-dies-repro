@@ -105,6 +105,9 @@ function Editor({ initialFileUri, initialLanguageId }: { initialFileUri: string,
                         connection: connectionConfig
                     }
 
+                    let configs: Record<string, LanguageClientConfig> = {};
+                    configs[languageId] = languageClientConfig;
+
                     await wrapper.current.init({
                         // id: languageId,
                         // wrapperConfig: {
@@ -112,7 +115,7 @@ function Editor({ initialFileUri, initialLanguageId }: { initialFileUri: string,
                         //     editorAppConfig: editorAppConfigClassic
                         // },
                         editorAppConfig: editorAppConfigClassic,
-                        languageClientConfigs: { languageId: languageClientConfig },
+                        languageClientConfigs: configs,
                     });
 
                     await wrapper.current.start();
