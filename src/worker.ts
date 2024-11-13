@@ -1,4 +1,4 @@
-import { BrowserMessageReader, BrowserMessageWriter, CodeAction, createConnection, InitializeResult, ProtocolRequestType0 } from 'vscode-languageserver/browser.js';
+import { BrowserMessageReader, BrowserMessageWriter, CodeAction, createConnection, InitializeResult } from 'vscode-languageserver/browser.js';
 
 const something: string = "hey"
 

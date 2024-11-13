@@ -1,5 +1,6 @@
 import * as monaco from 'monaco-editor';
-import { CodePlusUri, EditorAppConfigClassic, LanguageClientConfig, MonacoEditorLanguageClientWrapper, WorkerConfigDirect, WorkerConfigOptions } from 'monaco-editor-wrapper';
+import { CodePlusUri, ConnectionConfig, EditorAppConfigClassic, LanguageClientConfig, MonacoEditorLanguageClientWrapper, WorkerConfigDirect, WorkerConfigOptions } from 'monaco-editor-wrapper';
+import { ConnetionConfigOptions } from 'monaco-languageclient';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 const defaultText: Map<string, string> = new Map<string, string>([
@@ -15,52 +16,13 @@ const defaultText: Map<string, string> = new Map<string, string>([
 `]
 ])
 
-function Editor({ initialFileUri }: { initialFileUri: string }) {
+function Editor({ initialFileUri, initialLanguageId }: { initialFileUri: string, initialLanguageId: string }) {
     const wrapper = useRef<MonacoEditorLanguageClientWrapper | undefined>(undefined);
 
     const [fileUri, setFileUri] = useState(initialFileUri)
-    const [languageId, setLanguageId] = useState("javascript")
+    const [languageId, setLanguageId] = useState(initialLanguageId)
 
     const editorRoot = useRef<HTMLDivElement>(null);
-    const editor = useRef<monaco.editor.IStandaloneCodeEditor | undefined>(undefined);
-
-    const createEditor = useCallback(async () => {
-        if (!editorRoot.current || !wrapper.current) {
-            return;
-        }
-
-
-
-        // wrapper.current.getLanguageClient().
-
-        // const myEditor = monaco.editor.create(editorRoot.current, {
-        //     value,
-        //     language: "javascript",
-        //     automaticLayout: true,
-        // });
-
-        // myEditor.addAction({
-        //     id: 'yo',
-        //     label: 'something',
-        //     run: function (editor: monaco.editor.ICodeEditor, ...args: any[]): void | Promise<void> {
-        //         return
-        //     }
-        // });
-
-
-
-        // setTimeout(() => {
-        //     actionsExist = false;
-        // }, 5000);
-
-        editor.current = wrapper.current.getEditor(); //myEditor;
-
-        // setIsEditorReady(true);
-    }, []);
-
-    // useEffect(() => {
-    //     !isMonacoMounting && !isEditorReady && createEditor();
-    // }, [isMonacoMounting, isEditorReady, createEditor]);
 
     return (
         <div>
@@ -77,8 +39,7 @@ function Editor({ initialFileUri }: { initialFileUri: string }) {
                         column: 8
                     })
 
-                    console.log("Language Client State:", wrapper.current!.getLanguageClient()?.state);
-                    // console.log("Language client:", wrapper.current?.getLanguageClient().);
+                    console.log("Language Client State:", wrapper.current!.getLanguageClient(languageId)?.state);
                     console.log("Wrapper:", wrapper.current);
                 }}>test</button>
                 <button onClick={async () => {
@@ -86,8 +47,6 @@ function Editor({ initialFileUri }: { initialFileUri: string }) {
                         return;
                     }
                     wrapper.current = new MonacoEditorLanguageClientWrapper();
-
-                    const actionsExist = true;
 
 
                     const code: CodePlusUri = {
@@ -113,6 +72,7 @@ function Editor({ initialFileUri }: { initialFileUri: string }) {
                                 aliases: ["Javascript", "javascript"]
                             }
                         },
+                        htmlContainer: editorRoot.current!
                     };
 
                     // const worker = new Worker(new URL('./worker.ts', import.meta.url), {
@@ -125,32 +85,38 @@ function Editor({ initialFileUri }: { initialFileUri: string }) {
                     //     worker: worker
                     // }
 
-                    const workerConfigOptions: WorkerConfigOptions = {
+                    const connectionConfigOptions: ConnetionConfigOptions = {
                         $type: 'WorkerConfig',
                         type: 'module',
                         url: new URL('./worker.ts', import.meta.url),
                         workerName: "Logan LSP Worker",
                     }
 
+                    const connectionConfig: ConnectionConfig = {
+                        options: connectionConfigOptions
+                    }
+
                     const languageClientConfig: LanguageClientConfig = {
-                        languageId: languageId,
-                        options: workerConfigOptions, // workerConfigDirect
+                        // languageId: languageId,
+                        // options: workerConfigOptions, // workerConfigDirect
                         clientOptions: {
                             documentSelector: [languageId],
-                        }
+                        },
+                        connection: connectionConfig
                     }
 
                     await wrapper.current.init({
-                        id: languageId,
-                        wrapperConfig: {
-                            serviceConfig: undefined,
-                            editorAppConfig: editorAppConfigClassic
-                        },
-                        languageClientConfig: languageClientConfig
+                        // id: languageId,
+                        // wrapperConfig: {
+                        //     serviceConfig: undefined,
+                        //     editorAppConfig: editorAppConfigClassic
+                        // },
+                        editorAppConfig: editorAppConfigClassic,
+                        languageClientConfigs: { languageId: languageClientConfig },
                     });
 
-                    await wrapper.current.start(editorRoot.current);
-                    console.log("Language Client State:", wrapper.current.getLanguageClient()?.state);
+                    await wrapper.current.start();
+                    console.log("Language Client State:", wrapper.current.getLanguageClient(languageId)?.state);
 
                 }}>load</button>
                 <button onClick={async () => {
