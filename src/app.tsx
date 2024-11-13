@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Editor from './editor';
 import * as monaco from 'monaco-editor';
 
@@ -14,7 +14,7 @@ function App() {
 
         // https://stackoverflow.com/questions/57994101/show-quick-fix-for-an-error-in-monaco-editor
         monaco.languages.registerCodeActionProvider(languageId, {
-            provideCodeActions: function (model: monaco.editor.ITextModel, range: monaco.Range, context: monaco.languages.CodeActionContext, token: monaco.CancellationToken): monaco.languages.ProviderResult<monaco.languages.CodeActionList> {
+            provideCodeActions: function (model: monaco.editor.ITextModel, range: monaco.Range, _context: monaco.languages.CodeActionContext, _token: monaco.CancellationToken): monaco.languages.ProviderResult<monaco.languages.CodeActionList> {
 
                 const action: monaco.languages.CodeAction = {
                     title: `Example quick fix`,

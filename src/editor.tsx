@@ -1,7 +1,6 @@
-import * as monaco from 'monaco-editor';
-import { CodePlusUri, ConnectionConfig, EditorAppConfigClassic, LanguageClientConfig, MonacoEditorLanguageClientWrapper, WorkerConfigDirect, WorkerConfigOptions } from 'monaco-editor-wrapper';
+import { CodePlusUri, ConnectionConfig, EditorAppConfigClassic, LanguageClientConfig, MonacoEditorLanguageClientWrapper } from 'monaco-editor-wrapper';
 import { ConnetionConfigOptions } from 'monaco-languageclient';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 const defaultText: Map<string, string> = new Map<string, string>([
     ['test.json', `{
@@ -75,21 +74,14 @@ function Editor({ initialFileUri, initialLanguageId }: { initialFileUri: string,
                         htmlContainer: editorRoot.current!
                     };
 
-                    // const worker = new Worker(new URL('./worker.ts', import.meta.url), {
-                    //     type: 'module',
-                    //     name: "Logan's LSP worker"
-                    // })
-
-                    // const workerConfigDirect: WorkerConfigDirect = {
-                    //     $type: 'WorkerDirect',
-                    //     worker: worker
-                    // }
+                    const worker = new Worker(new URL('./worker.ts', import.meta.url), {
+                        type: 'module',
+                        name: "Logan's LSP worker"
+                    })
 
                     const connectionConfigOptions: ConnetionConfigOptions = {
-                        $type: 'WorkerConfig',
-                        type: 'module',
-                        url: new URL('./worker.ts', import.meta.url),
-                        workerName: "Logan LSP Worker",
+                        $type: 'WorkerDirect',
+                        worker: worker,
                     }
 
                     const connectionConfig: ConnectionConfig = {
@@ -123,11 +115,11 @@ function Editor({ initialFileUri, initialLanguageId }: { initialFileUri: string,
 
                 }}>load</button>
                 <button onClick={async () => {
+                    const editor = wrapper.current?.getEditor();
+                    editor?.dispose(); // not the problem
                     await wrapper.current!.dispose(true) // somewhere in here the other wrapper gets broken....?
-                    // wrapper.current!.getWorker()?.terminate();
+                    wrapper.current!.getWorker(languageId)?.terminate();
                     wrapper.current = undefined;
-                    // editor.current?.dispose(); // not the problem
-                    // editor.current = undefined;
                     console.log("Killed monaco editor with uri:", fileUri)
                 }}>kill</button>
             </div>
