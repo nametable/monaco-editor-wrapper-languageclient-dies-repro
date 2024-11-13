@@ -59,6 +59,7 @@ function App() {
             <div className="editors-container">
                 <Editor initialFileUri="test.js" initialLanguageId='javascript'></Editor>
                 <Editor initialFileUri="test2.js" initialLanguageId='javascript2'></Editor>
+                <Editor initialFileUri="test3.js" initialLanguageId='javascript3'></Editor>
                 {/* <Editor initialFileUri="test.json" initialLanguageId='json'></Editor>
                 <Editor initialFileUri="test2.json" initialLanguageId='json2'></Editor> */}
             </div>
